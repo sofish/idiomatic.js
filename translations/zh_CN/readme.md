@@ -23,6 +23,7 @@
 * Sofish Lin [@sofish](http://twitter.com/sofish), [github](https://github.com/sofish)
 
 
+
 ## 无论有多少人在维护，所有在代码仓库中的代码理应看起来像同一个人写的。
 
 ### 下面的清单概括了我作为原作者的所有代码中使用的实践。在我创建的项目中的所有构建代码都必须遵循这些规则。
@@ -35,8 +36,9 @@
 
 &nbsp;
 
-> ### "成为一个优秀的成功项目管理者的一个条件是明白，按自己的偏好风格写代码是非常不好的做法。如果成千上万的人都在使用你的代码，那么请尽可能通俗易懂地写出你的代码，而非在规范之下自作聪明地使用自己偏好的风格。"
+> ### "成为一个优秀的成功项目管理者的一个条件是明白，按自己的偏好风格写代码是非常糟糕的做法。如果成千上万的人都在使用你的代码，那么请尽可能通俗易懂地写出你的代码，而非在规范之下自作聪明地使用自己偏好的风格。"
 >_Idan_ _Gazit_
+
 
 ## 翻译版本
 
@@ -50,6 +52,7 @@
 * [Italian](https://github.com/rwldrn/idiomatic.js/tree/master/translations/it_IT)
 * [Russian](https://github.com/rwldrn/idiomatic.js/tree/master/translations/ru_RU)
 * [Romanian](https://github.com/rwldrn/idiomatic.js/tree/master/translations/ro_RO)
+
 
 ## 重要，非常通用资源：
 
@@ -79,9 +82,15 @@
  * [JS Assessment](https://github.com/rmurphey/js-assessment)
  * [Leveraging Code Quality Tools by Anton Kovalyov](http://anton.kovalyov.net/slides/gothamjs/)
 
-### 编译和部署
+
+
+
+### 编译和部署流程
 
 项目必须总是提供一些通用的方法来检验（can be linted）、测试和压缩源码以为产品阶段使用做准备。对于此类工作 Ben Alman 所写的 [grunt](https://github.com/cowboy/grunt) 可畏首屈一指，并已替代这个仓库的 “kits/” 目录作官方工具。
+
+
+
 
 ### 测试工具
 
@@ -109,16 +118,24 @@
  * [Comments](#comments)
  * [One Language Code](#language)
 
+
+
 ------------------------------------------------
+
 
 ## 前言
 
 下面的章节描述的是一个 _合理_ 的现代 JavaScript 开发风格指南，并非硬性规定。其想送出的核心理念是*高度统一的代码风格*（the law of code style consistency）。你为项目所择风格都应为最高准则。作为一个描述放置于你的项目中，并链接到这个文档作为代码风格一致性、可读性和可维护性的保证。
 
+
+
+
+
 ## Idiomatic Style Manifesto
 
+
 1. <a name="whitespace">空白</a>
-  - 永远都不要空格和Tab。
+  - 永远都不要混用空格和Tab。
   - 开始一个项目，在写代码之前，选择软缩进（空格）或者 Tab（作为缩进方式），以将其作为**最高准则**。
       - 为了可读, 我总是推荐在你的编辑中中设计2个字母的缩进 &mdash; 这等同于两个空格或者两个空格替代一个 Tab。
   - 如果你的编辑器支持，请总是打开 “显示不可见字符” 这个设置。好处是：
@@ -214,7 +231,7 @@
     // 在一个作用域（函数）内只使用一个 `var` 有助于提升可读性
     // 并且让你的声明列表变得有条不紊 (还帮你省了几次键盘敲击)
 
-    // 不好
+    // 坏
     var foo = "";
     var bar = "";
     var qux;
@@ -234,7 +251,7 @@
     // `var` 语句必须总是在各自作用域（函数）顶部
     // 同样适应于来自 ECMAScript 6 的常量
 
-    // 不好
+    // 坏
     function foo() {
 
       // 在变量前有语句
@@ -325,7 +342,8 @@
     // 2.C.1.1
     // 带回调的函数
     foo(function() {
-      // 注意：在第一函数调用的小括号和 `function` 处并没有空格
+      // 注意：在第一函数调用的小括号和 `function` 
+      // 之间并没有空格
     });
 
     // 函数接受 `array` 作为参数，没有空格
@@ -351,6 +369,7 @@
     D. 一致性（统一）总是笑到最后的（Consistency Always Wins）
 
     在 2.A-2.C 节，留白作为一个推荐方式被提出，基于单纯的、更高的目的：统一。值得注意的是格式化偏好，像“内部留白”必须是可选的，但在整个项目的源码中必须只存在着一种。
+
 
     ```javascript
 
@@ -439,7 +458,7 @@
 
     B. 类型转换（强制类型，Coerced Types）
 
-    考虑下面这个的含义...
+    考虑下面这个实现的含义...
 
     给定的 HTML:
 
@@ -722,7 +741,7 @@
 
 
     // 4.2.2
-    // 布尔, 真 & 伪
+    // 布尔, 真 & 假
 
     // 布尔:
     true, false
@@ -730,7 +749,7 @@
     // 真:
     "foo", 1
 
-    // 伪:
+    // 假:
     "", 0, null, undefined, NaN, void 0
 
     ```
@@ -1174,7 +1193,7 @@
     ```javascript
 
     // 7.B.1.1
-    // 不好:
+    // 坏:
     function returnLate( foo ) {
       var ret;
 
